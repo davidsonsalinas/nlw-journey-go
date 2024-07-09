@@ -1,0 +1,17 @@
+*.conf
+*.tmp
+*.bak
+*.swp
+venv/
+env/
+*.log
+*.o
+*.pyc
+*.class
+*.jar
+*.war
+*.ear
+.vscode/
+.idea/
+*.sublime-workspace
+*.env

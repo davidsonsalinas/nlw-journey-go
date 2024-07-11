@@ -63,7 +63,11 @@ func run(ctx context.Context) error {
 	r := chi.NewMux()
 	r.Use(middleware.RequestID, middleware.Recoverer, httputils.ChiLogger(logger))
 
-	si := api.NewApi(pool, logger)
+	si := api.NewApi(
+		pool,
+		logger,
+		mailpit.NewMailPit(pool),
+	)
 
 	r.Mount("/", spec.Handler(&si))
 
